@@ -14,7 +14,6 @@ class User < ApplicationRecord
   has_many :followers, through: :passive_relationships, source: :follower
   VALID_EMAIL_REGEX = Settings.users.email.regex
   VALID_PASSWORD_REGEX = Settings.users.password.regex
-  
   validates :name, presence: true,
     length: {minimum: Settings.users.name.min_length,
     maximum: Settings.users.name.max_length}
@@ -24,11 +23,8 @@ class User < ApplicationRecord
   validates :password, length: {minimum: Settings.users.password.min_length,
     maximum: Settings.users.password.max_length},
     format: {with: VALID_PASSWORD_REGEX}, allow_nil: true
-
   has_one_attached :avatar
-  
-  USER_PARAMS = %i(name email avatar password password_confirmation)
-  
+  USER_PARAMS = %i(name email avatar password password_confirmation).freeze
   has_secure_password
 
   def authenticated? attribute, token

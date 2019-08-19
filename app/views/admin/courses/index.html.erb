@@ -1,0 +1,34 @@
+<% provide :title, t(".course") %>
+<div class="row">
+  <div class="col-md-12">
+    <%= link_to new_admin_course_path, class: "btn btn-outline-primary mb-3" do %>
+      <i class="fa fa-plus"></i>
+      <%=  t ".create_course" %>
+    <% end %>
+    <div class="card shadow mb-4">
+      <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary"><%= t ".course_list" %></h6>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered w-100" cellsapcing="0">
+            <tr>
+              <thead>
+                <th><%= t ".stt" %></th>
+                <th><%= t ".name" %></th>
+                <th><%= t ".user" %></th>
+                <th><%= t ".image" %></th>
+                <th><%= t ".description" %></th>
+                <th><%= t ".action" %></th>
+              </thead>
+            </tr>
+            <tbody>
+              <%= render partial: "course", collection: @courses, as: :course  %>
+            </tbody>
+          </table>
+          <%= paginate @courses, theme: Settings.theme.paging %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

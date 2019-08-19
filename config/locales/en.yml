@@ -96,9 +96,6 @@ en:
   static_pages:
     home:
       please_login: "Please login"
-  facebooks:
-    facebook:
-      signin_with_facebook: "Sign in with facebook"
   admin:
     words:
       index:
@@ -126,3 +123,29 @@ en:
       destroy:
         success_destroyed: "Success destroyed"
         fail_destroy: "Fail destroy"
+    courses:
+      index:
+        stt: "Stt"
+        name: "Name"
+        user: "User"
+        course: "Courses"
+        create_course: "Create course"
+        description: "Description"
+        image: "Image"
+        action: "Action"
+      new:
+        add_course: "Add course"
+      edit:
+        edit_course: "Edit course"
+        save: "Save"
+      create:
+        success_created: "Success created"
+        fail_create: "Fail create"
+      update:
+        success_updated: "Success updated"
+        fail_update: "Fail update"
+      destroy:
+        success_destroy: "Success destroy"
+        fail_destroy: "Fail destroy"
+      course:
+        are_you_sure?: "Are you sure?"

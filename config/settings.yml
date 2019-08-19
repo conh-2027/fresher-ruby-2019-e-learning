@@ -26,3 +26,6 @@ words:
     page_nummber: 10
 theme:
   paging: 'twitter-bootstrap-4'
+courses:
+  paging:
+    page_number: 10
