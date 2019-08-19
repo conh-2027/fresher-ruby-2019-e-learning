@@ -15,4 +15,10 @@ following:
   paging_number: 50
 follower:
   paging_number: 50
+  following:
+    paging_number: 10
 remember_me: "1"
+facebook:
+  scope: "email"
+  omauth: 
+ 
