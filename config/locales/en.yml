@@ -19,6 +19,12 @@ en:
       cancel: "Cancel"
       logout: "Logout"
       e_learning: "E learning"
+    header:
+      e_learning: "E-Learning"
+      search: "Search"
+      admin: "Admin"
+      profile: "Profile"
+      logout: "Logout"
   users:
     new:
       create: "Create"
@@ -30,3 +36,8 @@ en:
     error_messages:
       error: "Error"
       the_form: "The form"
+  sessions:
+    new:
+      login: "Login"
+    create:
+      login_fail: "Login fail"

@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new user_params
-  
+
     if @user.save
       flash[:success] = t ".success_created"
       redirect_to @user
