@@ -3,3 +3,23 @@
     <%= @user.name  %>
   </div>
 </div>
+<div class="container">
+  <div class="row my-2">
+    <div class="col-lg-4 order-lg-1 text-center">
+      <div class="target">
+        <% image = @user.avatar.attached? ? @user.avatar : "default.png" %>
+        <%= image_tag image, class: "mx-auto img-fluid img-circle d-block", alt: "avatar" %>
+      </div>
+      <br><label><h4><b><%= @user.name %></b></h4></label>
+      <% if current_user?(@user) %>
+        <%= link_to  edit_user_path(@user) do %>
+          <i class="fa fa-pencil-square-o"></i>
+        <% end %>
+      <% end %>
+      <br>
+      <% unless current_user? @user %>
+        <%= render  "form_follow" if logged_in? %>
+      <% end %>
+    </div>
+  </div>
+</div>

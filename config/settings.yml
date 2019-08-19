@@ -11,4 +11,8 @@ users:
     regex: !ruby/regexp '/[A-Z][a-z]\d/i'
   reset_sent_at:
     expired_time: 2
+following:
+  paging_number: 50
+follower:
+  paging_number: 50
 remember_me: "1"

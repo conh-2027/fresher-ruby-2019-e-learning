@@ -8,6 +8,9 @@
   <%= f.password_field :password, class: "form-control" %>
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation, class: "form-control" %>
-  <%= f.file_field :avatar, class: "btn btn-outline-primary btn-sm" %>
-  <%= f.submit yield(:button_text), class: "btn btn-primary"  %>
+  <%= f.label :avatar %>
+  <%= f.file_field :avatar, class: "btn btn-outline-primary btn-sm btn-block" %>
+  <%= f.submit yield(:button_text), class: "btn btn-primary btn-block"  %>
+  <%= t ".already_account" %>
+  <%= link_to  t(".login"), login_path, class: "btn btn-link" %>
 <% end %>
