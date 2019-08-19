@@ -27,7 +27,6 @@ class FacebooksController < ApplicationController
     uri = URI "https://graph.facebook.com/v3.2/#{endpoint}"
     response_body = JSON.parse Net::HTTP.get_response(uri).body
   end
-
   def generic_callback
     load_api_request "oauth/access_token?client_id=#{ENV['FACEBOOK_APP_ID']}&client_secret=#{ENV['FACEBOOK_APP_SECRET']}&code=#{params[:code]}&redirect_uri=#{ENV['FACEBOOK_APP_URL']}"
   end

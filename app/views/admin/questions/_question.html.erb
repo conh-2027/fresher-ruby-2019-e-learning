@@ -1,0 +1,17 @@
+<tr >
+  <td><%= index_of_list @questions, question_counter %></td>
+  <td><%= question.question %></td>
+  <td><%= question.word_name %></td>
+  <td><%= load_answers question %></td>
+  <td>
+    &ensp; 
+    <%= link_to edit_admin_question_path(question), class: "btn btn-warning" do %>
+      <i class="fa fa-edit"></i>
+    <% end %>
+    &ensp;
+    <%= link_to admin_question_path(question), method: :delete,
+      data: { confirm: t(".are_you_sure?") }, class: "btn btn-danger" do %>
+      <i class="fa fa-trash"></i>
+    <% end %>
+  </td>
+</tr>

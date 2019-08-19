@@ -31,3 +31,10 @@ theme:
 courses:
   paging:
     page_number: 10
+courses:
+  paging:
+    page_number: 10
+questions:
+  paging:
+    paging_number: 10
+  answer: 4
