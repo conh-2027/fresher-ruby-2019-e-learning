@@ -32,6 +32,12 @@ en:
     create:
       success_created: "Success created"
       fail_create: "Fail create"
+    edit:
+      edit_profile: "Edit profile"
+      change_profile: "Change profile"
+    update:
+      update_success: "Update success"
+      update_fail: "Update fail"
   shared:
     error_messages:
       error: "Error"
