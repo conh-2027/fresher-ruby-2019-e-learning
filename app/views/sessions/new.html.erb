@@ -7,8 +7,16 @@
         <%= f.label :email %>
         <%= f.email_field :email, class: "form-control" %>
         <%= f.label :password %>
-        <%= f.password_field :password, class: "form-control", accept: "image/png,image/gif,image/jpeg" %>
-        <%= f.submit t(".login"), class: "btn btn-primary" %>
+        <%= f.password_field :password, class: "form-control" %>
+        <%= f.label :remember_me, class: "checkbox inline" do %>
+          <%= f.check_box :remember_me %>
+          <%= content_tag :span, t(".remember_me") %>
+        <% end %>
+        <div class="row">
+          <div class="col-md-1">
+            <%= f.submit t(".login"), class: "btn btn-primary" %>
+          </div>
+        </div>
       <% end %>
     </div>
   </div>
