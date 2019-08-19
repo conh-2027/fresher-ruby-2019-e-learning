@@ -1,5 +1,7 @@
 en:
   layouts:
+    application:
+      e_learning: "E-learning"
     admin_sidebar:
       user: "Users"
       course: "Courses"
@@ -17,3 +19,14 @@ en:
       cancel: "Cancel"
       logout: "Logout"
       e_learning: "E learning"
+  users:
+    new:
+      create: "Create"
+      signup: "Signup"
+    create:
+      success_created: "Success created"
+      fail_create: "Fail create"
+  shared:
+    error_messages:
+      error: "Error"
+      the_form: "The form"
