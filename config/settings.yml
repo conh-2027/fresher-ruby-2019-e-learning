@@ -20,5 +20,9 @@ follower:
 remember_me: "1"
 facebook:
   scope: "email"
-  omauth: 
- 
+words:
+  max_length: 60
+  paging:
+    page_nummber: 10
+theme:
+  paging: 'twitter-bootstrap-4'

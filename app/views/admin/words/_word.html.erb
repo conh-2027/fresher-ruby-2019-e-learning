@@ -1,0 +1,17 @@
+<tr >
+  <td><%= index_of_list @words, word_counter %></td>
+  <td><%= word.name %></td>
+  <td><%= word.meaning %></td>
+  <td><%= word.course_name %></td>
+  <td>
+    &ensp; 
+    <%= link_to edit_admin_word_path(word), class: "btn btn-warning" do %>
+      <i class="fa fa-edit"></i>
+    <% end %>
+    &ensp;
+    <%= link_to admin_word_path(word), method: :delete,
+      data: { confirm: t(".are_you_sure?") }, class: "btn btn-danger" do %>
+      <i class="fa fa-trash"></i>
+    <% end %>
+  </td>
+</tr>

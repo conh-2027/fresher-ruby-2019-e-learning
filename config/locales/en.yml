@@ -96,3 +96,33 @@ en:
   static_pages:
     home:
       please_login: "Please login"
+  facebooks:
+    facebook:
+      signin_with_facebook: "Sign in with facebook"
+  admin:
+    words:
+      index:
+        word: "Word"
+        word_list: "Word list"
+        stt: "Stt"
+        name: "Name"
+        meaning: "Meaning"
+        course: "Course"
+        action: "Action"
+        create_word: "Create word"
+      word:
+        are_you_sure?: "Are you sure?"
+      new:
+        add_word: "Add word"
+      create:
+        success_created: "Success created"
+        fail_create: "Fail create"
+      edit:
+        word_edit: "Word edit"
+        save: "Save"
+      update:
+        success_updated: "Success updated"
+        fail_update: "Fail update"
+      destroy:
+        success_destroyed: "Success destroyed"
+        fail_destroy: "Fail destroy"
