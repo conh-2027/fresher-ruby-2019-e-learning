@@ -1,2 +1,19 @@
 en:
-  hello: "Hello world"
+  layouts:
+    admin_sidebar:
+      user: "Users"
+      course: "Courses"
+      admin_panel: "Admin panel"
+      manage_words: "Words"
+      dashboard: "Dashboard"
+      manage_questions: "Questions"
+    admin_navbar:
+      title: "Title"
+      profile: "Profile"
+      sign_out: "Signout"
+    admin:
+      ready_to_leave: "Ready to leave"
+      select_logout_below: "Select admin below"
+      cancel: "Cancel"
+      logout: "Logout"
+      e_learning: "E learning"

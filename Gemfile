@@ -9,10 +9,15 @@ gem "mysql2"
 gem "sass-rails", "~> 5.0"
 gem "rubocop", "~> 0.54.0", require: false
 gem "bootsnap", ">= 1.1.0", require: false
+gem "bootstrap", "~> 4.3.1"
+gem "jquery-rails"
+gem "rails-i18n"
+gem "font-awesome-rails"
 gem "coffee-rails", "~> 4.2"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
 gem "jbuilder", "~> 2.5"
+gem "mini_racer"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
