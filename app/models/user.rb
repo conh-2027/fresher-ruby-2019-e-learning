@@ -25,6 +25,7 @@ class User < ApplicationRecord
     format: {with: VALID_PASSWORD_REGEX}, allow_nil: true
   has_one_attached :avatar
   USER_PARAMS = %i(name email avatar password password_confirmation).freeze
+  ADMIN_USER_PARAMS = %i(name email avatar password password_confirmation is_admin)
   has_secure_password
 
   def authenticated? attribute, token

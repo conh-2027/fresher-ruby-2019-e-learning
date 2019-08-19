@@ -12,7 +12,7 @@ class Admin::WordsController < Admin::BaseController
 
   def create 
     @word = Word.new word_params
-    
+
     if @word.save
       flash[:success] = t ".success_created"
       redirect_to admin_words_path
