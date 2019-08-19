@@ -48,3 +48,10 @@ en:
       remember_me: "Remember me"
     create:
       login_fail: "Login fail"
+      remember_me: "Remember me"
+    create:
+      login_fail: "Login fail"
+  user_mailer:
+    account_activation:
+      hi: "Hi"
+      activate: "Activate"

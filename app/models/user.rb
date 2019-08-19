@@ -1,7 +1,8 @@
 class User < ApplicationRecord
-  attr_accessor :remember_token
+  attr_accessor :remember_token, :activation_token
   before_save :downcase_email
-  
+  before_create :create_activation_digest
+
   has_many :results, dependent: :destroy
   has_many :courses, dependent: :destroy
   has_many :learnings, dependent: :destroy
@@ -23,7 +24,7 @@ class User < ApplicationRecord
   validates :password, length: {minimum: Settings.users.password.min_length,
     maximum: Settings.users.password.max_length},
     format: {with: VALID_PASSWORD_REGEX}, allow_nil: true
-  
+
   has_one_attached :avatar
   
   USER_PARAMS = %i(name email avatar password password_confirmation)
@@ -41,8 +42,16 @@ class User < ApplicationRecord
     update remember_digest: User.digest(remember_token)
   end
 
+  def activate
+    update activated: true, activated_at: Time.zone.now
+  end
+
   def forget
     update remember_digest: nil
+  end
+
+  def send_activation_email
+    UserMailer.account_activation(self).deliver_now
   end
 
   class << self
