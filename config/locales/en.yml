@@ -13,6 +13,7 @@ en:
       title: "Title"
       profile: "Profile"
       sign_out: "Signout"
+      dashboard: "Dashboard"
     admin:
       ready_to_leave: "Ready to leave"
       select_logout_below: "Select admin below"
@@ -149,3 +150,32 @@ en:
         fail_destroy: "Fail destroy"
       course:
         are_you_sure?: "Are you sure?"
+    users:
+      index:
+        stt: "Stt"
+        name: "Name"
+        user: "User"
+        create_user: "Create user"
+        email: "Email"
+        avatar: "Avatar"
+        role: "Role"
+        user_list: "User list"
+        action: "Action"
+      new:
+        add_user: "Add user"
+      edit:
+        user_edit: "Edit user"
+        save: "Save"
+      create:
+        success_created: "Success created"
+        fail_create: "Fail create"
+      update:
+        success_updated: "Success updated"
+        fail_update: "Fail update"
+      destroy:
+        success_destroyed: "Success destroy"
+        fail_destroy: "Fail destroy"
+      user:
+        are_you_sure?: "Are you sure?"
+      form:
+        admin: "Admin"

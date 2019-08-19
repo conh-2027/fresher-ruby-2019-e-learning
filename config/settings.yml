@@ -1,4 +1,6 @@
 users:
+  paging:
+    paging_number: 10
   email:
     regex: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i'
     max_length: 255
