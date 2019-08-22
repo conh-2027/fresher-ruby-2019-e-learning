@@ -1,0 +1,71 @@
+<%= provide :title, t("home_page.title") %>
+<div class="container-fluid py-3">
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-4 user-summary">
+      <div id="accordion">
+        <div class="card">
+          <div class="card-header p-0" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link btn-success text-white d-block w-100"
+                data-toggle="collapse" data-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                  <%= t ".summary" %>
+                </button>  
+            </h5>
+          </div>
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+            data-parent="#accordion">
+            <div class="card-body">
+              <div class="word-memmories"><%= t ".word_memmories" %>: 44</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header p-0" id="headingTwo">
+          <h5 class="mb-0">
+            <button class="btn btn-link btn-success text-white collapse d-block w-100"
+              data-toggle="collapse" data-target="#collapseTwo" aria-expanded="fale"
+              aria-controls="collapseTwo">
+              <%= t ".follower" %>  
+            </button>
+          </h5>          
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+         data-parent="#accordion">
+          <div class="card-body">
+            <div class="list-follower">
+              <div class="d-inline-block user-follow-item">
+                <div class="d-flex">
+                  <span class="avatar">
+                    <img class="rounded-circle mx-2" src="https://via.placeholder.com/20x20">
+                  </span>
+                  <%= link_to "user_path(followed)" do %>
+                    <span class="name"><% t ".follow_name" %></span>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-sm-12 col-md-8 list-courses">
+    <h3 class="heading"><%= t ".course_list" %></h3>
+    <div class="row">
+      <div class="card col-12 col-sm-6 col-md-4 py-2">
+        <img class="card-img-top w-100" src="https://via.placeholder.com/100x100">
+        <div class="card-body p-0">
+          <h5 class="card-title mt-2"><%= t ".name" %></h5>
+          <p class="card-title"><%= t ".description" %></p>
+          <div class="d-flex">
+            <%= link_to t(".word"), "#", class: "btn btn-success mx-1 w-50" %>
+             <%= link_to t(".start_lesson"), "#", class: "btn btn-success mx-1 w-50",
+             data: {confirm: t(".confim_lesson")} %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
