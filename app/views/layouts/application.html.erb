@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FresherRuby2019ELearning</title>
+    <title><%= full_title yield :title %></title>
     <%= render "layouts/shim" %>
   </head>
 
   <body>
     <%= render "layouts/header" %>
-    <%= yield %>
+    <div class="container-fluid">
+      <%= render "shared/flash" %>
+      <%= yield %>
+    </div>
   </body>
 </html>
