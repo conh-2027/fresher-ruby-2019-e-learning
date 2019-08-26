@@ -9,3 +9,4 @@ users:
     min_length: 6
     max_length: 32
     regex: !ruby/regexp '/[A-Z][a-z]\d/i'
+remember_me: "1"

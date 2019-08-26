@@ -23,7 +23,7 @@
             <span class="mr-2 d-none d-lg-inline text-gray-600 small">
               <%= current_user.name %>
             </span>
-            <% image = current_user.avatar.attached? ? current_user.avatar : "default.png" %>
+            <% image = current_user.avatar.attached?  ? current_user.avatar : "default.png" %>
             <%= image_tag image, class: "img-profile rounded-circle" %>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">

@@ -45,5 +45,6 @@ en:
   sessions:
     new:
       login: "Login"
+      remember_me: "Remember me"
     create:
       login_fail: "Login fail"
