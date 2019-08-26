@@ -23,7 +23,9 @@ class User < ApplicationRecord
     maximum: Settings.users.password.max_length},
     format: {with: VALID_PASSWORD_REGEX}, allow_nil: true
   
-  USER_PARAMS = %i(name email password password_confirmation)
+  has_one_attached :avatar
+  
+  USER_PARAMS = %i(name email avatar password password_confirmation)
   
   has_secure_password
 
