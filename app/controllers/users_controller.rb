@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :load_user, only: %i(show edit update)
-  
+
   def new
     @user = User.new
   end
@@ -9,7 +9,8 @@ class UsersController < ApplicationController
     @user = User.new user_params
 
     if @user.save
-      flash[:success] = t ".success_created"
+      @user.send_activation_email
+      flash[:info] = t ".please_check_mail"
       redirect_to @user
     else
       flash[:fail] = t ".fail_create"
