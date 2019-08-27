@@ -38,6 +38,12 @@ en:
     update:
       update_success: "Update success"
       update_fail: "Update fail"
+    follow:
+      follow: "Follow"
+    unfollow:
+      unfollow: "Unfollow"
+    form:
+      already_account: "Already have an account?"
   shared:
     error_messages:
       error: "Error"
@@ -46,6 +52,7 @@ en:
     new:
       login: "Login"
       remember_me: "Remember me"
+      don't_account: "Don't have an account?"
       forgot_password: "Forgot password?"
     create:
       login_fail: "Login fail"
@@ -85,3 +92,6 @@ en:
       if_you_did_not: "If you did not request your password to be reset, please ignore this email and
                       your password will stay as it is."
       click_link_below: "To reset your password click the link below: "
+  static_pages:
+    home:
+      please_login: "Please login"

@@ -11,6 +11,8 @@ gem "rubocop", "~> 0.54.0", require: false
 gem "bootsnap", ">= 1.1.0", require: false
 gem "bootstrap", "~> 4.3.1"
 gem "jquery-rails"
+gem "ffaker"
+gem "kaminari"
 gem "rails-i18n"
 gem "bcrypt"
 gem "figaro"

@@ -28,7 +28,7 @@
               <button class="btn btn-link btn-success text-white collapse d-block w-100"
                 data-toggle="collapse" data-target="#collapseTwo" aria-expanded="fale"
                 aria-controls="collapseTwo">
-                <%= t ".follower" %>  
+                <%= t ".follower" %>  (<%= @supports.user_followers.size %>)
               </button>
             </h5>          
           </div>
@@ -36,16 +36,50 @@
           data-parent="#accordion">
             <div class="card-body">
               <div class="list-follower">
-                <div class="d-inline-block user-follow-item">
-                  <div class="d-flex">
-                    <span class="avatar">
-                      <img class="rounded-circle mx-2" src="https://via.placeholder.com/20x20">
-                    </span>
-                    <%= link_to "user_path(followed)" do %>
-                      <span class="name"><% t ".follow_name" %></span>
-                    <% end %>
+                <% @supports.user_followers.each do |user| %>
+                  <div class="d-inline-block user-follow-item">
+                    <div class="d-flex">
+                      <span class="avatar">
+                        <% image = user.avatar.attached? ? user.avatar : "default.png" %>
+                        <%= image_tag image, class: "img-profile-follower rounded-circle" %>
+                      </span>
+                      <%= link_to user_path(user) do %>
+                        <span class="name"><%= user.name %></span>
+                      <% end %>
+                    </div>
                   </div>
-                </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header p-0" id="headingThree">
+            <h5 class="mb-0">
+              <button class="btn btn-link btn-success text-white collapse d-block w-100"
+                data-toggle="collapse" data-target="#collapseThree" aria-expanded="fale"
+                aria-controls="collapseThree">
+                <%= t ".followed" %> (<%= @supports.user_followeds.size %>) 
+              </button>
+            </h5>          
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+          data-parent="#accordion">
+            <div class="card-body">
+              <div class="list-followed">
+                <% @supports.user_followeds.each do |user| %>
+                  <div class="d-inline-block user-follow-item">
+                    <div class="d-flex">
+                      <span class="avatar">
+                        <% image = user.avatar.attached? ? user.avatar : "default.png" %>
+                        <%= image_tag image, class: "img-profile-follower rounded-circle" %>
+                      </span>
+                      <%= link_to user_path(user) do %>
+                        <span class="name"><%= user.name %></span>
+                      <% end %>
+                    </div>
+                  </div>
+                <% end %>
               </div>
             </div>
           </div>
@@ -74,8 +108,8 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-4">
-        <%= link_to  t(".signup"), new_user_path, class: "btn btn-primary" %>
-        <%= link_to t(".login"), login_path, class: "btn btn-primary" %>
+        <%= link_to  t(".signup"), new_user_path, class: "btn btn-lg btn-primary" %>
+        <%= link_to t(".login"), login_path, class: "btn  btn-lg btn-primary" %>
       </div>
     </div>
   </div>
