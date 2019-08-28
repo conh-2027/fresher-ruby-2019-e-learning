@@ -51,6 +51,7 @@ en:
   sessions:
     new:
       login: "Login"
+      signin_with_facebook: "Sign in with facebook"
       remember_me: "Remember me"
       don't_account: "Don't have an account?"
       forgot_password: "Forgot password?"
