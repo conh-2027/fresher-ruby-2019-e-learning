@@ -49,6 +49,13 @@ ActiveRecord::Schema.define(version: 2019_08_27_024738) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "followers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "followed_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "learnings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.integer "word_id"

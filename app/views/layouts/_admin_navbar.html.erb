@@ -18,20 +18,21 @@
     <div class="topbar-divider d-none d-sm-block"></div>
     <li class="nav-item dropdown no-arrow">
       <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%= "current_user.name "%></span>
-        <%= image_tag "default", class: "img-profile rounded-circle w-100" %>
+        <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%= current_user.name %></span>
+        <% image = current_user.avatar.attached? ? current_user.avatar : "default" %>
+        <%= image_tag image, class: "img-profile rounded-circle w-40" %>
       </a>
       <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-        <%= link_to "root_path", class: "dropdown-item" do %>
+        <%= link_to admin_path, class: "dropdown-item" do %>
           <i class="fa fa-home fa-sm fa-fw mr-2 text-black-400"></i>
-          <%= t ".title" %>
+          <%= t ".dashboard" %>
         <% end %>
-        <%= link_to "user_path(current_user)", class: "dropdown-item" do %>
+        <%= link_to current_user, class: "dropdown-item" do %>
           <i class="fa fa-user fa-sm fa-fw mr-2 text-black-400"></i>
           <%= t ".profile" %>
         <% end %>
         <div class="dropdown-divider"></div>
-        <%= link_to "user_path", method: :delete, class: "dropdown-item" do %>
+        <%= link_to user_path(current_user), method: :delete, class: "dropdown-item" do %>
           <i class="fa fa-sign-out fa-sm fa-fw mr-2 text-black-400"></i>
           <%= t(".sign_out") %>
         <% end %>

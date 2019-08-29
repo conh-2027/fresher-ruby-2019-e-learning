@@ -1,0 +1,14 @@
+<%= form_for [:admin, @word] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control" %>
+  <%= f.label :meaning %>
+  <%= f.text_field :meaning, class: "form-control" %>
+  <%= f.label :pronounce %>
+  <%= f.text_field :pronounce, class: "form-control" %>
+  <%= f.label :example %>
+  <%= f.text_area :example, class: "form-control" %>
+  <%= f.label :course %>
+  <%= f.select :course_id, options_for_select(load_courses, selected: @word.course_id), {}, class: "form-control" %>
+  <%= f.submit yield(:button_text), class: "btn btn-primary my-2" %>
+<% end %>
