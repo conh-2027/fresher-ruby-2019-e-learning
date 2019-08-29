@@ -5,7 +5,6 @@ class Course < ApplicationRecord
   validates :name, presence: true
   validates :user_id, presence: true
   validates :description, presence: true
-
   has_one_attached :image
 
   delegate :name, to: :user, prefix: true, allow_nil: true
