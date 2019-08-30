@@ -8,7 +8,7 @@ class Admin::QuestionsController < Admin::BaseController
 
   def new
     @question = Question.new
-    4.times { @question.answers.build}
+    Settings.questions.answer.times{@question.answers.build}
   end
 
   def create
@@ -45,8 +45,7 @@ class Admin::QuestionsController < Admin::BaseController
   private
 
   def question_params
-    params.require(:question).permit :question, :word_id,
-      answers_attributes: [:id, :content, :is_correct]
+    params.require(:question).permit Question::QUESTION_PARAMS
   end
   
   def load_question

@@ -1,8 +1,8 @@
 <tr >
   <td><%= index_of_list @questions, question_counter %></td>
   <td><%= question.question %></td>
-  <td><%=  %></td>
   <td><%= question.word_name %></td>
+  <td><%= load_answers question %></td>
   <td>
     &ensp; 
     <%= link_to edit_admin_question_path(question), class: "btn btn-warning" do %>

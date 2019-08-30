@@ -155,10 +155,11 @@ en:
         stt: "Stt"
         name: "Name"
         user: "User"
-        create_course: "Create user"
+        create_user: "Create user"
         email: "Email"
         avatar: "Avatar"
         role: "Role"
+        user_list: "User list"
         action: "Action"
       new:
         add_user: "Add user"
@@ -178,3 +179,32 @@ en:
         are_you_sure?: "Are you sure?"
       form:
         admin: "Admin"
+    questions:
+      index:
+        stt: "Stt"
+        question: "Question"
+        word: "Word name"
+        correct_answer: "Correct answer"
+        action: "Action"
+        question_list: "Question list"
+        create_question: "Create question"
+      form:
+        answer: "Answer"
+      new:
+        add_question: "Add question"
+      create:
+        success_created: "Success created"
+        fail_create: "fail create"
+      update:
+        success_updated: "Success updated"
+        fail_update: "Fail update"
+      destroy:
+        success_destroy: "Success destroy"
+        fail_destroy: "Fail destroy"
+      load_question:
+        not_found: "Not found"
+      question:
+        are_you_sure?: "Are you sure?"
+      edit:
+        question_edit: "Question edit"
+        save: "Save"

@@ -1,7 +1,6 @@
 module QuestionsHelper
-  def load_answers question_id
-    answer_corrects = Answer.where(is_correct: true).pluck :question_id
-    question_of_answer = Question.where()
+  def load_answers question
+    question.answers.correct_answer.pluck :content
   end
 
   def load_words

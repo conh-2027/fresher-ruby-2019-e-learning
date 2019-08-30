@@ -24,8 +24,9 @@ class User < ApplicationRecord
     maximum: Settings.users.password.max_length},
     format: {with: VALID_PASSWORD_REGEX}, allow_nil: true
   has_one_attached :avatar
+  
   USER_PARAMS = %i(name email avatar password password_confirmation).freeze
-  ADMIN_USER_PARAMS = %i(name email avatar password password_confirmation is_admin)
+  ADMIN_USER_PARAMS = %i(name email avatar password password_confirmation is_admin).freeze
   has_secure_password
 
   def authenticated? attribute, token
