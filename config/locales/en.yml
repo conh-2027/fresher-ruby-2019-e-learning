@@ -208,3 +208,6 @@ en:
       edit:
         question_edit: "Question edit"
         save: "Save"
+  courses:
+    course:
+      start: "Start"

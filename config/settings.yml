@@ -1,4 +1,5 @@
 users:
+  size: 200x200
   paging:
     paging_number: 10
   email:

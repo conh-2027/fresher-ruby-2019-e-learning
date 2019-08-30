@@ -1,116 +1,31 @@
-<%= provide :title, t("home_page.title") %>
-<% if logged_in? %>
-  <div class="container-fluid py-3">
-    <div class="row">
-      <div class="col-12 col-sm-12 col-md-4 user-summary">
-        <div id="accordion">
-          <div class="card">
-            <div class="card-header p-0" id="headingOne">
-              <h5 class="mb-0">
-                <button class="btn btn-link btn-success text-white d-block w-100"
-                  data-toggle="collapse" data-target="#collapseOne"
-                  aria-expanded="true" aria-controls="collapseOne">
-                    <%= t ".summary" %>
-                  </button>  
-              </h5>
-            </div>
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-              data-parent="#accordion">
-              <div class="card-body">
-                <div class="word-memmories"><%= t ".word_memmories" %>: 44</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header p-0" id="headingTwo">
-            <h5 class="mb-0">
-              <button class="btn btn-link btn-success text-white collapse d-block w-100"
-                data-toggle="collapse" data-target="#collapseTwo" aria-expanded="fale"
-                aria-controls="collapseTwo">
-                <%= t ".follower" %>  (<%= @supports.user_followers.size %>)
-              </button>
-            </h5>          
-          </div>
-          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-          data-parent="#accordion">
-            <div class="card-body">
-              <div class="list-follower">
-                <% @supports.user_followers.each do |user| %>
-                  <div class="d-inline-block user-follow-item">
-                    <div class="d-flex">
-                      <span class="avatar">
-                        <% image = user.avatar.attached? ? user.avatar : "default.png" %>
-                        <%= image_tag image, class: "img-profile-follower rounded-circle" %>
-                      </span>
-                      <%= link_to user_path(user) do %>
-                        <span class="name"><%= user.name %></span>
-                      <% end %>
-                    </div>
-                  </div>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header p-0" id="headingThree">
-            <h5 class="mb-0">
-              <button class="btn btn-link btn-success text-white collapse d-block w-100"
-                data-toggle="collapse" data-target="#collapseThree" aria-expanded="fale"
-                aria-controls="collapseThree">
-                <%= t ".followed" %> (<%= @supports.user_followeds.size %>) 
-              </button>
-            </h5>          
-          </div>
-          <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-          data-parent="#accordion">
-            <div class="card-body">
-              <div class="list-followed">
-                <% @supports.user_followeds.each do |user| %>
-                  <div class="d-inline-block user-follow-item">
-                    <div class="d-flex">
-                      <span class="avatar">
-                        <% image = user.avatar.attached? ? user.avatar : "default.png" %>
-                        <%= image_tag image, class: "img-profile-follower rounded-circle" %>
-                      </span>
-                      <%= link_to user_path(user) do %>
-                        <span class="name"><%= user.name %></span>
-                      <% end %>
-                    </div>
-                  </div>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<% provide(:title, (t".home_title") )%>
+<div class="super_container">
+ <div class="courses">
+    <div class="section_background parallax-window"
+      data-parallax="scroll"
+        data-image-src="images/courses_background.jpg" data-speed="0.8">
     </div>
-    <div class="col-12 col-sm-12 col-md-8 list-courses">
-      <h3 class="heading"><%= t ".course_list" %></h3>
+    <div class="container">
       <div class="row">
-        <div class="card col-12 col-sm-6 col-md-4 py-2">
-          <img class="card-img-top w-100" src="https://via.placeholder.com/100x100">
-          <div class="card-body p-0">
-            <h5 class="card-title mt-2"><%= t ".name" %></h5>
-            <p class="card-title"><%= t ".description" %></p>
-            <div class="d-flex">
-              <%= link_to t(".word"), "#", class: "btn btn-success mx-1 w-50" %>
-              <%= link_to t(".start_lesson"), "#", class: "btn btn-success mx-1 w-50",
-              data: {confirm: t(".confim_lesson")} %>
+        <div class="col">
+          <div class="section_title_container text-center">
+            <h2 class="section_title"><%= t ".welcome" %></h2>
+            <div class="section_subtitle">
+              <p><%= t ".description" %></p>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="row courses_row">
+          <%= render @courses %>
+        </div>
+        <div class="col">
+          <div class="courses_button trans_200">
+            <%= link_to t(".all_courses"), courses_path %>
           </div>
         </div>
       </div>
     </div>
   </div>
-<% else %>
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-4">
-        <%= link_to  t(".signup"), new_user_path, class: "btn btn-lg btn-primary" %>
-        <%= link_to t(".login"), login_path, class: "btn  btn-lg btn-primary" %>
-      </div>
-    </div>
-  </div>
-<% end %>
+</div>

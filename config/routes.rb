@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   end
   resources :relationships, only: %i(create destroy)
   resources :account_activations, only: :edit
+  resources :courses
   resources :password_resets, only: %i(new create edit update)
   get "/facebook/login", to: "facebooks#login_facebook", as: "login_facebook"
   resource :facebook
