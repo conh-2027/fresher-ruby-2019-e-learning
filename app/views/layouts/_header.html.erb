@@ -1,49 +1,70 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <%= link_to t(".e_learning"), root_path , class: "navbar-brand"%>
-  <button class="navbar-toggler" type="button" data-toggle="collapse"
-    data-target="#navbarSupportContent" aria-controls="navbarSuppportContent"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>  
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportContent">
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="Search" placeholder="Search"
-        aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-        <%= t ".search" %>
-      </button>
-    </form>
-    <% if logged_in? %>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbardropdown"
-            role="button" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-              <%= current_user.name %>
-            </span>
-            <% image = current_user.avatar.attached?  ? current_user.avatar : "default.png" %>
-            <%= image_tag image, class: "img-profile rounded-circle" %>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <% if current_user.is_admin? %>
-              <%= link_to admin_path, class: "dropdown-item" do %>
-                <i class="fa fa-external-link fa-sm fa-fw mr-2 text-black-400"></i>
-                <%= t ".admin" %>
-              <% end %>
-            <% end %>
-            <%= link_to edit_user_path(current_user), class: "dropdown-item" do %>
-              <i class="fa fa-user fa-sm fa-fw mr-2 text-black-400"></i>
-              <%= t ".profile" %>
-            <% end %>
-            <%= link_to logout_path, method: :delete, class: "dropdown-item" do %>
-              <i class="fa fa-sign-out fa-sm fa-fw mr-2 text-black-400"></i>
-              <%= t ".logout" %>
-            <% end %>
+<header class="header">
+  <!-- Header Content -->
+  <div class="header_container">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="header_content d-flex flex-row
+            align-items-center justify-content-start">
+            <div class="logo_container">
+              <a href=<%= root_path %>>
+                <div class="logo_text"><%= t".ht" %>
+                  <span><%= t".edu" %></span></div>
+              </a>
+            </div>
+            <nav class="main_nav_contaner ml-auto">
+              <ul class="main_nav">
+                <div id="menu">
+                <li class="link active">
+                  <%= link_to t(".home"), root_path %>
+                </li>
+                <% if logged_in? %>
+                  <li class="link"><%= link_to t(".courses"), "courses_path" %></li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <%= t ".user" %> <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li class="dropdown-item"><%= link_to t(".profile"), current_user %></li>
+                      <li class="dropdown-item"><%= link_to t(".lessons"), "lessons_path" %></li>
+                      <div class="dropdown-divider"></div>
+                      <li class="dropdown-item">
+                        <%= link_to t(".logout"), logout_path, method: :delete %>
+                      </li>
+                    </ul>
+                  </li>
+                  <div class="search_button"><i class="fa fa-search"
+                   aria-hidden="true"></i></div>
+                <% else %>
+                  <li class="link">
+                    <%= link_to t(".login"), login_path %>
+                  </li>
+                <% end %>
+              </div>
+              </ul>
+              <!-- Hamburger -->
+            </nav>
+            </div>
           </div>
-        </li>
-      </ul>
-    <% end %>
-  </div>
-</nav>
+        </div>
+      </div>
+    </div>
+  <!-- Header Search Panel -->
+  <div class="header_search_container">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="header_search_content d-flex flex-row align-items-center justify-content-end">
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="Search" placeholder="Search"
+                aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                <%= t ".search" %>
+              </button>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
