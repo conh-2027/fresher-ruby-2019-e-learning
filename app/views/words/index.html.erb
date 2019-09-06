@@ -1,0 +1,29 @@
+<% provide :title, t(".learn") %>
+<div class="container details_container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="list-follower">
+        <h4 class="title text-black my-2"><%= t ".high_score" %></h4>
+      </div>
+    </div>
+    <div class="card shadow mb-4 col-md-9 col-sm-12 mt-5 m-auto">
+      <div class="card-header py-3">
+        <hr class="invisible">
+        <h6 class="m-0 font-weight-bold text-primary"><%= t ".word" %></h6>
+      </div>
+      <% if @supports.load_words.present? %>
+        <%= render partial: "word", collection: @supports.load_words, as: :word %>
+        <%= paginate @supports.load_words, theme: Settings.theme.paging %>
+        <% if params[:page].to_i == @supports.load_words.total_count %>
+          <div class="course_price ml-auto">
+            <%= link_to t(".learned"), courses_path, class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="text m-auto">
+          <%= t ".empty" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

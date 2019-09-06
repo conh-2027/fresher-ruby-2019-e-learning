@@ -27,6 +27,7 @@ class User < ApplicationRecord
   
   USER_PARAMS = %i(name email avatar password password_confirmation).freeze
   ADMIN_USER_PARAMS = %i(name email avatar password password_confirmation is_admin).freeze
+
   has_secure_password
 
   def authenticated? attribute, token

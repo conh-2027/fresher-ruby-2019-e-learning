@@ -1,15 +1,17 @@
 <div class="col-lg-4 course_col">
   <div class="course">
     <div class="course_image">
-      <% image = course.image.attached? ? course.image : "course_1.jpg" %>
-      <%= image_tag image %>
+      <%= image_tag load_image(course) %>
     </div>
     <div class="course_body">
       <h3 class="course_title">
-        <%= course.name %>
+        <%= truncate course.name, length: Settings.courses.length_name %>
       </h3>
       <div class="course_text">
-        <p><%= course.description %></p>
+        <p>
+          <%= truncate course.description,
+           length: Settings.courses.length_description %>
+        </p>
       </div>
     </div>
     <div class="course_footer">
@@ -17,15 +19,15 @@
         align-items-center justify-content-start">
         <div class="course_info">
           <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-          <span><%= "s" %></span>
+          <span><%=  %></span>
         </div>
        <div class="course_info">
           <i class="fa fa-star" aria-hidden="true"></i>
-          <span><%= "course.words_size" %> <%= t ".word" %></span>
+          <span><%= course.words.size %> <%= t ".word" %></span>
         </div>
         <% if logged_in? %>
-          <div class="course_price ml-auto">
-            <%= link_to t(".start"), "#", class: "btn btn-primary btn-start" %>
+         <div class="course_price ml-auto">
+            <%= link_to t(".learn_word"), learn_words_path(course.id), class: "btn btn-primary btn-sm btn-learn-word" %>
           </div>
         <% else %>
           <div class="course_price ml-auto">

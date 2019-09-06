@@ -19,8 +19,10 @@ Rails.application.routes.draw do
   end
   resources :relationships, only: %i(create destroy)
   resources :account_activations, only: :edit
-  resources :courses
+  resources :courses, only: %(index)
   resources :password_resets, only: %i(new create edit update)
   get "/facebook/login", to: "facebooks#login_facebook", as: "login_facebook"
   resource :facebook
+  get "course/:course_id/words", to: "words#index", as: "learn_words"
+  get "word-learned", to:"words#view_word", as: "view_word"
 end

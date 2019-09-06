@@ -21,8 +21,12 @@ en:
       logout: "Logout"
       e_learning: "E learning"
     header:
+      edu: "Edu"
+      hc: "Hc"
+      home: "Home"
+      word_list: "Word list"
+      courses: "Courses"
       e_learning: "E-Learning"
-      search: "Search"
       admin: "Admin"
       profile: "Profile"
       logout: "Logout"
@@ -38,17 +42,26 @@ en:
       change_profile: "Change profile"
     update:
       update_success: "Update success"
-      update_fail: "Update fail"
     follow:
       follow: "Follow"
     unfollow:
       unfollow: "Unfollow"
+    following:
+      following: "Following"
+    followers:
+      follower: "Follower"
     form:
       already_account: "Already have an account?"
+    show:
+      learned_word: "Memorised words: %{quantity} "
+      edit: "Edit"
   shared:
     error_messages:
       error: "Error"
       the_form: "The form"
+    stats:
+      following: "Following"
+      followers: "Follower"
   sessions:
     new:
       login: "Login"
@@ -97,6 +110,10 @@ en:
   static_pages:
     home:
       please_login: "Please login"
+      welcome: "Welcome"
+      home_title: "E-learning"
+      description: "Description"
+      all_courses: "All courses"
   admin:
     words:
       index:
@@ -210,4 +227,16 @@ en:
         save: "Save"
   courses:
     course:
+      learn_word: "Learn word"
       start: "Start"
+      word: "Word"
+    index:
+      all_courses: "All courses"
+  words:
+    index:
+      learned: "Learned"
+      learn: "Learn"
+      high_score: "Hight socre"
+      word: "Word"
+    word:
+      example: "Example"
