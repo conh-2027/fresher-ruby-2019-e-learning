@@ -1,6 +1,6 @@
 module QuestionsHelper
   def load_answers question
-    question.answers.correct_answer.pluck :content
+    question.answers.is_corrects.pluck :content
   end
 
   def load_words

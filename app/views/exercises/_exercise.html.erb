@@ -1,0 +1,14 @@
+<tr scope="row">
+  <td><%= convert_date exercise.created_at %></td>
+  <td><%= exercise.course_name %></td>
+  <td><%= exercise.result %></td>
+  <% if exercise.result.zero? %>
+    <td><%= exercise.status %></td>  
+    <td><%= link_to t(".start"), edit_exercise_path(exercise),
+      class: "btn btn-outline-info" %></td>
+  <% else %>
+    <td><%= exercise.result %>/<%= exercise.questions.size %></td>
+    <td><%= link_to t(".view"), exercise_path(exercise),
+      class: "btn btn-outline-success"%></td>
+  <% end %>
+</tr>
