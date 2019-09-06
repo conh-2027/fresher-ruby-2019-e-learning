@@ -29,7 +29,6 @@ class ExerciseService
     @results = @results[:exercise_details_attributes].values
     
     get_correct_answers.each do |correct_answer|
-      byebug
       @results.each do |answer|
         question_id = answer.values[0].to_i
         answer_id = answer.values[1].to_i

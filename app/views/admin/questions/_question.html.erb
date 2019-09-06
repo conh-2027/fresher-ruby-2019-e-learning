@@ -2,6 +2,7 @@
   <td><%= index_of_list @questions, question_counter %></td>
   <td><%= question.question %></td>
   <td><%= question.course_name %></td>
+  <td><%= question.answers.size %></td>
   <td><%= load_answers question %></td>
   <td>
     &ensp; 

@@ -8,7 +8,6 @@ class Admin::QuestionsController < Admin::BaseController
 
   def new
     @question = Question.new
-    Settings.questions.answer.times{@question.answers.build}
   end
 
   def create

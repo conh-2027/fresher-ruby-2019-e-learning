@@ -19,7 +19,6 @@ class ExercisesController < ApplicationController
   def create
     params[:exercise][:user_id] = current_user.id
     course_id = params[:exercise][:course_id].to_i
-
     ActiveRecord::Base.transaction do 
       @exercise = Exercise.create exercise_params
       ExerciseService.new(@exercise, course_id,
