@@ -3,7 +3,7 @@ class User < ApplicationRecord
   before_save :downcase_email
   before_create :create_activation_digest
 
-  has_many :results, dependent: :destroy
+  has_many :exercises, dependent: :destroy
   has_many :courses, dependent: :destroy
   has_many :learnings, dependent: :destroy
   has_many :active_relationships, class_name: Relationship.name,

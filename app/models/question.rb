@@ -1,5 +1,5 @@
 class Question < ApplicationRecord
-  belongs_to :word
+  belongs_to :course
   has_many :answers, dependent: :destroy
   validates :question, presence: true
 
