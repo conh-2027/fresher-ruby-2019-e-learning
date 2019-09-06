@@ -51,3 +51,9 @@ words:
     paging_number: 10
   learning:
     paging_number: 1
+exercises:
+  question_number: 2
+  default: 0
+  paging:
+    paging_number: 5
+  created_at_exercise: "%B %e, %Y at %I:%M %p"

@@ -1,0 +1,21 @@
+@import 'color';
+
+input[type=radio] {
+  width: 100%;
+}
+
+label {
+  font-family: auto;
+  font-size: 14px;
+  font-style: inherit;
+}
+
+strong.question-content {
+  font-weight: bolder;
+  font-family: none;
+  font-size: 18px
+}
+
+.correct_answer {
+  background: #52ce0b2e;
+}

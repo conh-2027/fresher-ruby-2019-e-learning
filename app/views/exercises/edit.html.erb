@@ -1,0 +1,38 @@
+<div class="details_container card shadow mb-4 col-lg-10 col-md-10 col-sm-12 mt-5 m-auto">
+<% if @exercise.questions.size > Settings.exercises.default %>
+  <%= form_for @exercise do |f| %>
+    <div class="justify-content-center">
+      <div class="card-header py-5">
+        <h1><%= @exercise.course_name %></h1>
+      </div>
+      <div class="card-body text-gray-900">
+        <div class="box-part text-left">
+          <div class="list_questions ">
+            <ol>
+              <%= f.fields_for :exercise_details do |question| %>
+              <hr>
+                <li>
+                  <strong class="question-content">
+                    <%= question.object.question.question %>
+                  </strong>
+                </li>
+                <%= question.hidden_field :question_id %>
+                <%= question.collection_radio_buttons(:answer_id,
+                  question.object.question.answers, :id, :content) %>
+              <% end %>
+            </ol>
+            <%= f.submit t(".submit"), class: "btn btn-outline-primary" %>
+          </div>        
+        </div> 
+      </div>
+    </div>
+  <% end %>
+  <% else %>
+    <div>
+      <p>
+        <%= t ".courser_empty" %>
+      </p>
+      <%= link_to t(".back"), new_exercise_path, class: "btn btn-outline-info" %>
+    </div>
+  <% end %>
+</div>
