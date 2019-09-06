@@ -7,6 +7,6 @@ class Course < ApplicationRecord
   has_one_attached :image
 
   delegate :name, to: :user, prefix: true, allow_nil: true
-
+  scope :sort_by_created_at, ->{order(created_at: :desc)}
   COURSE_PARAMS = %i(name user_id image description).freeze
 end

@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
   def home
-    @courses = Course.all.limit 3
+    @courses = Course.sort_by_created_at 
   end
 end
