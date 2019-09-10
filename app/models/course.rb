@@ -1,7 +1,7 @@
 class Course < ApplicationRecord
   belongs_to :user
   has_many :words, dependent: :destroy
-  has_many :results, dependent: :destroy
+  has_many :exercises, dependent: :destroy
   validates :name, presence: true
   validates :description, presence: true
   has_one_attached :image
