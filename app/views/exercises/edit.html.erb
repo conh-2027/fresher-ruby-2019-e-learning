@@ -7,6 +7,18 @@
       </div>
       <div class="card-body text-gray-900">
         <div class="box-part text-left">
+        <div id="clockdiv">
+          <h4 class="time-text"><%= t :time_remaining %></h4>
+          <span id="time-remain" data-time-remain="<%= @time_remain %>"></span>
+          <div>
+            <span id="minutes"></span>
+            <div class="smalltext"><%= t :minutes %></div>
+          </div>
+          <div>
+            <span id="seconds"></span>
+            <div class="smalltext"><%= t :seconds %></div>
+          </div>
+        </div>
           <div class="list_questions ">
             <ol>
               <%= f.fields_for :exercise_details do |question| %>

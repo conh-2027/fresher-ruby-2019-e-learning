@@ -9,4 +9,8 @@ class Exercise < ApplicationRecord
   accepts_nested_attributes_for :exercise_details, allow_destroy: true
   EXERCISE_PARAMS = [:course_id, :user_id,
     exercise_details_attributes: %i(id answer_id question_id exercise_id).freeze]
+
+  def time_remaining
+    
+  end
 end
