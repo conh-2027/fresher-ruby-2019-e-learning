@@ -205,8 +205,13 @@ en:
         action: "Action"
         question_list: "Question list"
         create_question: "Create question"
+        answer_number: "Answer number"
+      answer_fields:
+        remove: "Remove"
+        answer: "Answer"
       form:
         answer: "Answer"
+        add_answer: "Add answer"
       new:
         add_question: "Add question"
       create:

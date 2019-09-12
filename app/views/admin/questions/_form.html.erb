@@ -12,16 +12,9 @@
   <hr>
   <div class="form-group">
     <%= f.fields_for :answers do |build| %>
-      <%= build.label :content, t(".answer") %>
-      <div class="row">
-        <div class="col-8">
-          <%= build.text_field :content, class: "form-control" %>
-        </div>
-        <div class="col-4">
-          <%= build.check_box :is_correct %>
-        </div>
-      </div>
+      <%= render "answer_fields", f: build %>
     <% end %>
+    <%= link_to_add_fields t(".add_answer"), f, :answers %>
   </div>
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>
