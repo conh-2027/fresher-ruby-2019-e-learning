@@ -1,0 +1,32 @@
+<% provide :title, t(".exercise_result") %>
+<div class="details_container">
+  <div class="details_container card shadow mb-4 col-lg-10 col-md-10 col-sm-12 mt-5 m-auto">
+    <div class="justify-content-center">
+      <div class="card-header py-5">
+        <h1><%= @exercise.course_name %></h1>
+      </div>
+      <div class="card-body text-gray-900">
+        <div class="box-part text-left">
+          <ol>
+            <% @exercise.exercise_details.each do |exercise| %>
+              <li>
+                <strong><%= exercise.question.question %></strong>
+                <% exercise.question.answers.each do |answer| %>
+                  <% if answer.is_correct? %>
+                    <div class="correct_answer">
+                  <% else %>
+                    <div>
+                  <% end %>
+                      <%= radio_button_tag "answer_#{answer.id}", true,
+                        answer.id == exercise.answer_id.to_i, disabled: true %>
+                      <div class="text-content"><%= answer.content %></div>
+                    </div>  
+                <% end %>
+              </li>
+            <% end %>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -24,8 +24,8 @@ en:
       edu: "Edu"
       hc: "Hc"
       home: "Home"
-      word_list: "Word list"
       courses: "Courses"
+      exercise: "Exercise"
       e_learning: "E-Learning"
       admin: "Admin"
       profile: "Profile"
@@ -240,3 +240,25 @@ en:
       word: "Word"
     word:
       example: "Example"
+  exercises:
+    create:
+      exercise_fail: "exercise fail"
+    load_exercise:
+      not_found: "Not found"
+    form:
+      create_exercise: "Create exercise"
+    index:
+      date: "Date"
+      course: "Course"
+      result: "Result"
+      status: "Status"
+      list_exercises: List Exercises
+      create_exercise: "Create exercise"
+    exercise:
+      view: "View"
+      start: "Start"
+    edit:
+      submit: "Submit"
+      back: "Back"
+      courser_empty: "Course not question"
+

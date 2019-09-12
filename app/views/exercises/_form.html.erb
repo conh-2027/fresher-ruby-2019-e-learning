@@ -1,0 +1,11 @@
+<%= form_for current_user.exercises.build, remote: true do |f| %>
+  <div class="row">
+    <div class="col">
+      <%= f.select :course_id, options_for_select(get_list_courses), {},
+        {class: "form-control"} %>
+    </div>
+    <div class="col">
+      <%= f.submit t(".create_exercise"), class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

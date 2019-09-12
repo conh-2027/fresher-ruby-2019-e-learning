@@ -1,4 +1,4 @@
 class Answer < ApplicationRecord
   belongs_to :question
-  scope :correct_answer, ->{where is_correct: true}
+  scope :is_corrects, ->{where is_correct: true}
 end
